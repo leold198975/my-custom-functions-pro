@@ -50,4 +50,9 @@ jQuery(document).ready(function($) {
                           
  });
 
+ // Show/hide button text toggle
+ $('.showHide').click(function () {
+	$('span', this).toggle();
+ });
+
 });

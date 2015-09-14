@@ -85,7 +85,10 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 					<textarea rows="10" name="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" id="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" ><?php echo esc_attr( $content ); ?></textarea>
                   </div>
                   <button type="button" class="button deleteSection">Delete</button>
-                  <button type="button" class="button showField">Show/Hide</button>
+                  <button type="button" class="button showHide">
+                    <span>Show</span>
+                    <span style="display: none">Hide</span>
+                  </button>
 				</div>
                 <div class="formRowRepeatingSection">
                     <button type="button" class="button addAnotherSection">Add Another Field</button>
