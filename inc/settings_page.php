@@ -16,8 +16,8 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 	$options = get_option( 'anarcho_cfunctions_pro_settings' );
 	$content = isset( $options['anarcho_cfunctions_pro-content'] ) && ! empty( $options['anarcho_cfunctions_pro-content'] ) ? $options['anarcho_cfunctions_pro-content'] : '<?php
 
-    /* Enter Your Custom Functions Here */';
-    $error = get_option( 'anarcho_cfunctions_pro_error' );
+	/* Enter Your Custom Functions Here */';
+	$error = get_option( 'anarcho_cfunctions_pro_error' );
 
 	// Settings update message
 	if ( isset( $_GET['settings-updated'] ) ) :
@@ -32,31 +32,31 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 
 	// Error message
 	if ( $error == '1' ) :
-            ?>
-            <div id="message" class="error">
+			?>
+			<div id="message" class="error">
                 <p>
                     <?php _e( 'Sorry, but your code causes a "Fatal error", so it is not applied!', 'anarcho_cfunctions_pro' ); ?><br/>
                     <?php _e( 'Please, check the code and try again.', 'anarcho_cfunctions_pro' ); ?>
                 </p>
 			</div>
-            <?php
+			<?php
                 endif;
 
 	// Page
 	?>
-    <div class="wrap">
-        <h2 style="text-align:center; color:cornflowerblue;">
-            <?php _e( 'My Custom Functions Pro', 'anarcho_cfunctions_pro' ); ?>
-            <br/>
-            <span style="margin-top:1px; font-size:0.6em; color: black;">
+	<div class="wrap">
+		<h2 style="text-align:center; color:cornflowerblue;">
+			<?php _e( 'My Custom Functions Pro', 'anarcho_cfunctions_pro' ); ?>
+			<br/>
+			<span style="margin-top:1px; font-size:0.6em; color: black;">
                 <?php _e( 'by <a href="http://mycyberuniverse.com/author.html" target="_blank" style="display:inline; padding:0;">Arthur "Berserkr" Gareginyan</a>', 'anarcho_cfunctions_pro' ); ?>
-            <span/>
-        </h2>
-        <form name="anarcho_cfunctions_pro-form" action="options.php" method="post" enctype="multipart/form-data">
-            <?php settings_fields( 'anarcho_cfunctions_pro_settings_group' ); ?>
+			<span/>
+		</h2>
+		<form name="anarcho_cfunctions_pro-form" action="options.php" method="post" enctype="multipart/form-data">
+			<?php settings_fields( 'anarcho_cfunctions_pro_settings_group' ); ?>
 
-                        <!-- Sidebar -->
-            <div id="templateside" style="position:fixed; right:20px;">
+                        <!-- SIDEBAR -->
+			<div id="templateside" style="position:fixed; right:20px;">
                 <?php do_action( 'anarcho_cfunctions_pro-sidebar-top' ); ?>
 				<p style="margin-top: 0">
 					<?php _e( 'This plugin allows you to EASILY and SAFELY add your own functions, snippets or any custom code to your site.', 'anarcho_cfunctions_pro' ) ?>
@@ -71,9 +71,10 @@ function anarcho_cfunctions_pro_render_submenu_page() {
                                         </a>
                                 </p>
 				<?php do_action( 'anarcho_cfunctions_pro-sidebar-bottom' ); ?>
-			 </div>
-                        <!-- END-Sidebar -->
-                        <!-- Form -->
+			</div>
+                        <!-- END-SIDEBAR-->
+
+                        <!-- FORM -->
 			<div id="container" style="margin-right:210px;">
 				<?php do_action( 'anarcho_cfunctions_pro-form-top' ); ?>
 				<div class="repeatingSection">
@@ -96,6 +97,9 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 				<?php do_action( 'anarcho_cfunctions_pro-textarea-bottom' ); ?>
 				<?php do_action( 'anarcho_cfunctions_pro-form-bottom' ); ?>
 			</div>
+                        <!-- END-FORM -->
+
+                        <!-- SCRIPT -->
 			<script type="text/javascript" language="javascript">
                 var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]'), {
 				     lineNumbers: true,
@@ -104,6 +108,9 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 				     indentUnit: 4
 				});
 			</script>
+                        <!-- END-SCRIPT -->
+
+                        <!-- STYLE -->
 			<style>
                 textarea {
                     width: 100%;
@@ -130,7 +137,8 @@ function anarcho_cfunctions_pro_render_submenu_page() {
                     font-weight: bold;
                 }
 			</style>
-            <!-- END-Form -->
+                        <!-- END-STYLE -->
+
 		</form>
 	   </div>
 	<?php
