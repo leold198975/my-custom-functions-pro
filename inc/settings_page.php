@@ -32,14 +32,14 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 
 	// Error message
 	if ( $error == '1' ) :
-			?>
-			<div id="message" class="error">
+            ?>
+            <div id="message" class="error">
                 <p>
                     <?php _e( 'Sorry, but your code causes a "Fatal error", so it is not applied!', 'anarcho_cfunctions_pro' ); ?><br/>
                     <?php _e( 'Please, check the code and try again.', 'anarcho_cfunctions_pro' ); ?>
                 </p>
 			</div>
-			<?php
+            <?php
                 endif;
 
 	// Page
