@@ -91,9 +91,8 @@ function anarcho_cfunctions_pro_render_submenu_page() {
                     <span style="display: none">Hide</span>
                   </button>
 				</div>
-                <div class="formRowRepeatingSection">
-                    <button type="button" class="button addAnotherSection">Add Another Field</button>
-                </div>
+                </br>
+                <button type="button" class="button addAnotherSection">Add Another Function</button>
 				<?php do_action( 'anarcho_cfunctions_pro-textarea-bottom' ); ?>
 				<?php do_action( 'anarcho_cfunctions_pro-form-bottom' ); ?>
 			</div>
