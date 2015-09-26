@@ -100,12 +100,12 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 
                         <!-- SCRIPT -->
 			<script type="text/javascript" language="javascript">
-                var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]'), {
+                /*var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('anarcho_cfunctions_pro_function_1'), {
 				     lineNumbers: true,
 				     matchBrackets: true,
 				     mode: 'application/x-httpd-php',
 				     indentUnit: 4
-				});
+				});*/
 			</script>
                         <!-- END-SCRIPT -->
 
