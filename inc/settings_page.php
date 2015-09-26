@@ -78,13 +78,11 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 			<div id="container" style="margin-right:210px;">
 				<?php do_action( 'anarcho_cfunctions_pro-form-top' ); ?>
 				<div class="repeatingSection">
-                  <div class="formRow">
                     <h3>
                         <label for="label">Label:</label>
                         <input type="text" name="label" id="label" value="" />
                     </h3>
 					<textarea rows="10" name="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" id="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" ><?php echo esc_attr( $content ); ?></textarea>
-                  </div>
                   <button type="button" class="button deleteSection">Delete</button>
                   <button type="button" class="button showHide">
                     <span>Show</span>
