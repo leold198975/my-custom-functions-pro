@@ -5,10 +5,9 @@
 jQuery(document).ready(function($) {
 
  // Add a new repeating section
- var attrs = ['for', 'id', 'name'];
-
  function resetAttributeNames(section) {
-    var tags = section.find('textarea, input, label'),
+    var tags = section.find('textarea, input, label');
+    var attrs = ['for', 'id', 'name'];
     idx = section.index();
     tags.each(function () {
               var $this = $(this);
@@ -35,10 +34,11 @@ jQuery(document).ready(function($) {
     var current_field = $(this).parent('div');
     var other_fields = current_field.siblings('.repeatingSection');
     if (other_fields.length === 0) {
-                          alert("Cannot delete the last field.  If you do not require this field then leave it blank.");
+                           alert("Cannot delete the last function. If you do not require this function then leave it blank.");
                           return;
     }
     current_field.slideUp('fast', function () {
+
                           current_field.remove();
 
                           // reset field indexes
@@ -50,9 +50,12 @@ jQuery(document).ready(function($) {
                           
  });
 
- // Show/hide button text toggle
- $('.showHide').click(function () {
-	$('span', this).toggle();
+ // Show/hide entry of field and change text of button
+ $('.showHide').click(function (e) {
+    e.preventDefault();
+    var current_field = $(this).prev('span');
+    current_field.toggleClass( 'show' );
+    $('span', this).toggle();
  });
 
 });

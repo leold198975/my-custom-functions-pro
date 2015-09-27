@@ -35,18 +35,19 @@ This is a simple and perfect tool to use as your site's functionality plugin.
 * Syntax highlighting (by CodeMirror).
 * Line numbering (by CodeMirror).
 * Input areas allow for tab indentation.
+* CodeMirror scripts are combined and minified.
 * Trigger to temporary disable the custom code.
 * Ready for translation (.pot file included).
 * (Got more ideas? Tell me!)
 
-For more details please visit - [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions.html)
+For more details please visit - [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions-pro.html)
 
 **Please Vote and Enjoy**
 
 * Your votes really make a difference! Thanks.
 
 == Installation ==
-Install "My Custom Functions" just as you would any other WP Plugin.
+Install "My Custom Functions Pro" just as you would any other WP Plugin.
 
 Automatically via WordPress:
 
@@ -79,10 +80,10 @@ I don't limit the number of characters.
 Yes. But If your language is not available then you can make one. This plugin is ready for translation. The .pot file is included and placed in "languages" folder. Many of plugin users would be delighted if you shared your translation with the community. Just send the translation files (*.po, *.mo) to me at the arthurgareginyan@gmail.com and I will include the translation within the next plugin update.
 
 = Where to report bug if found? =
-Please visit [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions.html) and report.
+Please visit [Dedicated Plugin Page on GitHub](https://github.com/ArthurGareginyan/my-custom-functions-pro) and report.
 
 = Where to share any ideas or suggestions to make the plugin better? =
-Please visit [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions.html) and share.
+Please visit [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions-pro.html) and share.
 
 
 == Screenshots ==
@@ -102,7 +103,7 @@ Commercial licensing (e.g. for projects that can’t use an open-source license)
 **Support**
 
 * Did you enjoy this plugin? Please [donate to support ongoing development](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JG3SB73K86FA8). Your contribution would be greatly appreciated.
-* Do you have any ideas or suggestions to make the plugin better? I can’t wait to hear them! Please share! [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions.html)
+* Do you have any ideas or suggestions to make the plugin better? I can’t wait to hear them! Please share! [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions-pro.html)
 
 **Please Vote and Enjoy**
 
@@ -111,7 +112,8 @@ Commercial licensing (e.g. for projects that can’t use an open-source license)
 **Links**
 
 * [Developer Website](http://mycyberuniverse.com)
-* [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions.html)
+* [Dedicated Plugin Page](http://mycyberuniverse.com/my_programs/wp-plugin-my-custom-functions-pro.html)
+* [Dedicated Plugin Page on GitHub](https://github.com/ArthurGareginyan/my-custom-functions-pro)
 
 
 == Changelog ==

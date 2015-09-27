@@ -72,22 +72,25 @@ function anarcho_cfunctions_pro_render_submenu_page() {
                                 </p>
 				<?php do_action( 'anarcho_cfunctions_pro-sidebar-bottom' ); ?>
 			</div>
-                        <!-- END-SIDEBAR-->
+                        <!-- END-SIDEBAR -->
 
                         <!-- FORM -->
 			<div id="container" style="margin-right:210px;">
 				<?php do_action( 'anarcho_cfunctions_pro-form-top' ); ?>
+
 				<div class="repeatingSection">
                     <h3>
                         <label for="label">Label:</label>
                         <input type="text" name="label" id="label" value="" />
                     </h3>
-					<textarea rows="10" name="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" id="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" ><?php echo esc_attr( $content ); ?></textarea>
-                  <button type="button" class="button deleteSection">Delete</button>
-                  <button type="button" class="button showHide">
-                    <span>Show</span>
-                    <span style="display: none">Hide</span>
-                  </button>
+                    <span class="func" style="display: none;">
+                        <textarea rows="10" name="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" id="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" ><?php echo esc_attr( $content ); ?></textarea>
+                    </span>
+                    <button type="button" class="button showHide">
+                        <span><?php _e( 'Show', 'anarcho_cfunctions_pro' ); ?></span>
+                        <span style="display: none"><?php _e( 'Hide', 'anarcho_cfunctions_pro' ); ?></span>
+                    </button>
+                    <button type="button" class="button-primary deleteSection" style="float:right;"><?php _e( 'Delete', 'anarcho_cfunctions_pro' ); ?></button>
 				</div>
                 </br>
                 <button type="button" class="button addAnotherSection">Add Another Function</button>
@@ -132,6 +135,9 @@ function anarcho_cfunctions_pro_render_submenu_page() {
                     padding: 5px;
                     margin: 5px;
                     font-weight: bold;
+                }
+                .show {
+                    display: inline !important;
                 }
 			</style>
                         <!-- END-STYLE -->

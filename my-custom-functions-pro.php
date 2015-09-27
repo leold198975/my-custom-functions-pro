@@ -80,7 +80,7 @@ add_action( 'admin_menu', 'anarcho_cfunctions_pro_register_submenu_page' );
 require_once( plugin_dir_path( __FILE__ ) . 'inc/settings_page.php' );
 
 /**
- *  Enqueue jQuery library and Repeater script
+ *  Enqueue jQuery library, Repeater script, CodeMirror scripts and styles
  *
  * @since 0.1
  */
@@ -95,6 +95,9 @@ function anarcho_cfunctions_pro_load_scripts($hook) {
     // Repeater
     wp_enqueue_script('anarcho-repeater-field', plugin_dir_url(__FILE__) . 'inc/repeater.js');
 
+    // CodeMirror
+    wp_enqueue_script('codemirror', plugin_dir_url(__FILE__) . 'inc/codemirror/codemirror-compressed.js');
+    wp_enqueue_style('codemirror_style', plugin_dir_url(__FILE__) . 'inc/codemirror/codemirror.css');
 }
 add_action('admin_enqueue_scripts', 'anarcho_cfunctions_pro_load_scripts');
 
@@ -104,30 +107,10 @@ add_action('admin_enqueue_scripts', 'anarcho_cfunctions_pro_load_scripts');
  * @since 0.1
  */
 function anarcho_cfunctions_pro_register_settings() {
-	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_settings' );
+	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_function' );
+	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_error' );
 }
 add_action( 'admin_init', 'anarcho_cfunctions_pro_register_settings' );
-
-/**
- * Enqueue the CodeMirror scripts and styles
- *
- * @since 0.1
- */
-function anarcho_cfunctions_pro_enqueue_codemirror_scripts($hook) {
-    if ( 'appearance_page_my-custom-functions-pro' != $hook ) {
-        return;
-    }
-
-    wp_enqueue_script('codemirror', plugin_dir_url(__FILE__) . 'inc/codemirror/lib/codemirror.js');
-    wp_enqueue_script('codemirror_xml', plugin_dir_url(__FILE__) . 'inc/codemirror/mode/xml.js');
-    wp_enqueue_script('codemirror_javascript', plugin_dir_url(__FILE__) . 'inc/codemirror/mode/javascript.js');
-    wp_enqueue_script('codemirror_css', plugin_dir_url(__FILE__) . 'inc/codemirror/mode/css.js');
-    wp_enqueue_script('codemirror_htmlmixed', plugin_dir_url(__FILE__) . 'inc/codemirror/mode/htmlmixed.js');
-    wp_enqueue_script('codemirror_clike', plugin_dir_url(__FILE__) . 'inc/codemirror/mode/clike.js');
-    wp_enqueue_script('codemirror_php', plugin_dir_url(__FILE__) . 'inc/codemirror/mode/php.js');
-    wp_enqueue_style('codemirror_style', plugin_dir_url(__FILE__) . 'inc/codemirror/lib/codemirror.css');
-}
-add_action( 'admin_enqueue_scripts', 'anarcho_cfunctions_pro_enqueue_codemirror_scripts' );
 
 /**
  * Execute My Custom Functions Pro
@@ -143,13 +126,15 @@ function anarcho_cfunctions_pro_exec() {
      $content = trim( $content );
      $content = trim( $content, '<?php' );
 
-     // Reset error value
-     update_option( 'anarcho_cfunctions_pro_error', '0' );
-
      // Parsing and execute safe
-     if( false === @eval( $content ) ) {
-		// ERROR
-		update_option( 'anarcho_cfunctions_pro_error', '1' );
+     if ( !empty($content) ) {
+        if( false === @eval( $content ) ) {
+            //ERROR
+            update_option( 'anarcho_cfunctions_pro_error', '1' );
+        } else {
+            // Reset error value
+            update_option( 'anarcho_cfunctions_pro_error', '0' );
+        }
      }
 }
 anarcho_cfunctions_pro_exec();
