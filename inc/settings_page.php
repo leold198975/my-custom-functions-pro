@@ -13,21 +13,21 @@ defined('ABSPATH') or die("Restricted access!");
 function anarcho_cfunctions_pro_render_submenu_page() {
 
 	// Variables
-	$options = get_option( 'anarcho_cfunctions_pro_settings' );
-	$content = isset( $options['anarcho_cfunctions_pro-content'] ) && ! empty( $options['anarcho_cfunctions_pro-content'] ) ? $options['anarcho_cfunctions_pro-content'] : '<?php
-
-	/* Enter Your Custom Functions Here */';
-	$error = get_option( 'anarcho_cfunctions_pro_error' );
+	//$options = get_option( 'anarcho_cfunctions_pro_functions' );
+	//$content = isset( $options[] ) && ! empty( $options[] ) ? $options[] : '/* Enter Your Custom Functions Here */';
+    $functions = get_option( 'anarcho_cfunctions_pro_functions' );
+    $content = isset( $functions ) && ! empty( $functions ) ? $functions : '/* Enter Your Custom Functions Here */';
+    $error = get_option( 'anarcho_cfunctions_pro_error' );
 
 	// Settings update message
 	if ( isset( $_GET['settings-updated'] ) ) :
-		?>
+            ?>
 			<div id="message" class="updated">
 				<p>
 					<?php _e( 'Custom functions updated successfully.', 'anarcho_cfunctions_pro' ); ?>
 				</p>
 			</div>
-		<?php
+            <?php
 	endif;
 
 	// Error message
@@ -38,9 +38,9 @@ function anarcho_cfunctions_pro_render_submenu_page() {
                     <?php _e( 'Sorry, but your code causes a "Fatal error", so it is not applied!', 'anarcho_cfunctions_pro' ); ?><br/>
                     <?php _e( 'Please, check the code and try again.', 'anarcho_cfunctions_pro' ); ?>
                 </p>
-			</div>
+            </div>
             <?php
-                endif;
+    endif;
 
 	// Page
 	?>
@@ -80,11 +80,11 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 
 				<div class="repeatingSection">
                     <h3>
-                        <label for="label">Label:</label>
-                        <input type="text" name="label" id="label" value="" />
+                        <label for="label[0]">Label:</label>
+                        <input type="text" name="label[0]" id="label[0]" size="50%" value="" />
                     </h3>
-                    <span class="func" style="display: none;">
-                        <textarea rows="10" name="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" id="anarcho_cfunctions_pro_settings[anarcho_cfunctions_pro-content]" ><?php echo esc_attr( $content ); ?></textarea>
+                    <span class="func" style="//display: none;">
+                        <textarea name="anarcho_cfunctions_pro_functions[0]" id="anarcho_cfunctions_pro_functions[0]" class="func_editor" ><?php echo esc_attr( get_option( 'anarcho_cfunctions_pro_functions[0]' ) ); ?></textarea>
                     </span>
                     <button type="button" class="button showHide">
                         <span><?php _e( 'Show', 'anarcho_cfunctions_pro' ); ?></span>
@@ -101,47 +101,25 @@ function anarcho_cfunctions_pro_render_submenu_page() {
 
                         <!-- SCRIPT -->
 			<script type="text/javascript" language="javascript">
-                /*var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('anarcho_cfunctions_pro_function_1'), {
-				     lineNumbers: true,
-				     matchBrackets: true,
-				     mode: 'application/x-httpd-php',
-				     indentUnit: 4
-				});*/
-			</script>
-                        <!-- END-SCRIPT -->
-
-                        <!-- STYLE -->
-			<style>
-                textarea {
-                    width: 100%;
-                }
-
-				.CodeMirror {
-					border: 1px solid cornflowerblue;
-					height: auto;
+				// Chanhe editor to CodeMirror
+				var list = document.getElementsByTagName('textarea');
+				for (i in list) {
+				     list[i].innerHTML = "TEST TEST TEST";
+				     var editor = CodeMirror.fromTextArea( list[i] , {
+				          lineNumbers: true,
+				          matchBrackets: true,
+				          mode: 'application/x-httpd-php',
+				          indentUnit: 4
+				     });
+				     editor.refresh();
 				}
 
-                .repeatingSection {
-                    border: 1px solid #D4CED7;
-                    border-radius: 6px;
-                    padding: 5px;
-                    margin: 5px;
-                    background-color: #EAEAEA;
-                }
-                .formRow {
-                    padding: 2px;
-                }
-                .formRowRepeatingSection {
-                    padding: 5px;
-                    margin: 5px;
-                    font-weight: bold;
-                }
-                .show {
-                    display: inline !important;
-                }
-			</style>
-                        <!-- END-STYLE -->
-
+				// Refreshh CodeMirror editor after 1 second
+				setTimeout(function() {
+				     editor.refresh();
+				},1);
+			</script>
+                        <!-- END-SCRIPT -->
 		</form>
 	   </div>
 	<?php

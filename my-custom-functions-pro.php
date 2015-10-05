@@ -98,6 +98,9 @@ function anarcho_cfunctions_pro_load_scripts($hook) {
     // CodeMirror
     wp_enqueue_script('codemirror', plugin_dir_url(__FILE__) . 'inc/codemirror/codemirror-compressed.js');
     wp_enqueue_style('codemirror_style', plugin_dir_url(__FILE__) . 'inc/codemirror/codemirror.css');
+
+    // Styles
+    wp_enqueue_style('styles', plugin_dir_url(__FILE__) . 'inc/styles.css');
 }
 add_action('admin_enqueue_scripts', 'anarcho_cfunctions_pro_load_scripts');
 
@@ -107,7 +110,8 @@ add_action('admin_enqueue_scripts', 'anarcho_cfunctions_pro_load_scripts');
  * @since 0.1
  */
 function anarcho_cfunctions_pro_register_settings() {
-	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_function' );
+	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_labels' );
+	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_functions' );
 	register_setting( 'anarcho_cfunctions_pro_settings_group', 'anarcho_cfunctions_pro_error' );
 }
 add_action( 'admin_init', 'anarcho_cfunctions_pro_register_settings' );
@@ -119,16 +123,16 @@ add_action( 'admin_init', 'anarcho_cfunctions_pro_register_settings' );
  */
 function anarcho_cfunctions_pro_exec() {
      // Read from BD
-     $options = get_option( 'anarcho_cfunctions_pro_settings' );
-     $content = $options['anarcho_cfunctions_pro-content'];
+     $functions = get_option( 'anarcho_cfunctions_pro_functions' );
+     //$functions = $options[@];
 
      // Cleaning
-     $content = trim( $content );
-     $content = trim( $content, '<?php' );
+     $functions = trim( $functions );
+     $functions = trim( $functions, '<?php' );
 
      // Parsing and execute safe
-     if ( !empty($content) ) {
-        if( false === @eval( $content ) ) {
+     if ( !empty($functions) ) {
+        if( false === @eval( $functions ) ) {
             //ERROR
             update_option( 'anarcho_cfunctions_pro_error', '1' );
         } else {
@@ -146,8 +150,9 @@ anarcho_cfunctions_pro_exec();
  * @since 0.1
  */
 function anarcho_cfunctions_pro_uninstall() {
-	delete_option( 'anarcho_cfunctions_pro_settings' );
-        delete_option( 'anarcho_cfunctions_pro_error' );
+	delete_option( 'anarcho_cfunctions_pro_labels' );
+	delete_option( 'anarcho_cfunctions_pro_functions' );
+	delete_option( 'anarcho_cfunctions_pro_error' );
 }
 register_uninstall_hook( __FILE__, 'anarcho_cfunctions_pro_uninstall' );
 

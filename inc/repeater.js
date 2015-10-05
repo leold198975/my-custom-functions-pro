@@ -1,10 +1,14 @@
 /*
- * Repeater field v0.1 | @agareginyan
+ * My Custom Functions Pro
+ * Repeater field
+ * v 0.1
+ * @agareginyan
  */
+
 
 jQuery(document).ready(function($) {
 
- // Add a new repeating section
+ // Adding numbers to attribute names 
  function resetAttributeNames(section) {
     var tags = section.find('textarea, input, label');
     var attrs = ['for', 'id', 'name'];
@@ -20,12 +24,30 @@ jQuery(document).ready(function($) {
     })
  }
 
- $('.addAnotherSection').click(function (e) {
+ // Add a new repeating section
+ /*$('.addAnotherSection').click(function (e) {
     e.preventDefault();
     var lastRepeatingGroup = $('.repeatingSection').last();
     var cloned = lastRepeatingGroup.clone(true)
     cloned.insertAfter(lastRepeatingGroup);
     resetAttributeNames(cloned)
+ });*/
+
+ // Count
+ var countadd_field = 0;
+
+ // Add a new repeating section
+ $('.addAnotherSection').click(function (e) {
+    e.preventDefault();
+
+    countadd_field = countadd_field + 1;
+
+    // THE FOLLOWING HTML IS PREPARED BY PHP AND INSERTED AS A VARIABLE LIKE
+    // $(this).before(\''.$js_code.'\');
+
+    $(this).before('<div class="repeatingSection"><h3><label for="labels[' + countadd_field + ']">Label:</label><input type="text" name="labels[' + countadd_field + ']" id="labels[' + countadd_field + ']" size="50%" value="" /></h3><span class="func" style="//display: none;"><textarea name="anarcho_cfunctions_pro_functions[' + countadd_field + ']" id="anarcho_cfunctions_pro_functions[' + countadd_field + ']" class="func_editor" ><?php echo esc_attr( get_option( "anarcho_cfunctions_pro_functions[' + countadd_field + ']" ) ); ?></textarea></span><button type="button" class="button showHide"><span><?php _e( "Show", "anarcho_cfunctions_pro" ); ?></span><span style="display: none"><?php _e( "Hide", "anarcho_cfunctions_pro" ); ?></span></button><button type="button" class="button-primary deleteSection" style="float:right;"><?php _e( "Delete", "anarcho_cfunctions_pro" ); ?></button></div>');
+
+    //$(".repeatingSection").append('<button type="button" class="button showHide"><span><?php _e( "Show", "anarcho_cfunctions_pro" ); ?></span><span style="display: none"><?php _e( "Hide", "anarcho_cfunctions_pro" ); ?></span></button><button type="button" class="button-primary deleteSection" style="float:right;"><?php _e( "Delete", "anarcho_cfunctions_pro" ); ?></button>');
  });
 
  // Delete a repeating section
