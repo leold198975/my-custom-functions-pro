@@ -55,7 +55,7 @@ add_action( 'init', 'anarcho_cfunctions_pro_textdomain' );
  * @return array        Array of links to be output on Plugin Admin page.
  */
 function anarcho_cfunctions_pro_settings_link( $links ) {
-	$settings_page = '<a href="' . admin_url( 'themes.php?page=my-custom-functions-pro.php' ) .'">' . __( 'Settings', 'anarcho_cfunctions_pro' ) . '</a>';
+	$settings_page = '<a href="' . admin_url( 'options-general.php?page=my-custom-functions-pro.php' ) .'">' . __( 'Settings', 'anarcho_cfunctions_pro' ) . '</a>';
 	array_unshift( $links, $settings_page );
 	return $links;
 }
@@ -68,7 +68,7 @@ add_filter( "plugin_action_links_$plugin", 'anarcho_cfunctions_pro_settings_link
  * @since 0.1
  */
 function anarcho_cfunctions_pro_register_submenu_page() {
-	add_theme_page( __( 'My Custom Functions Pro', 'anarcho_cfunctions_pro' ), __( 'Custom Functions', 'anarcho_cfunctions_pro' ), 'edit_theme_options', basename( __FILE__ ), 'anarcho_cfunctions_pro_render_submenu_page' );
+	add_options_page( __( 'My Custom Functions Pro', 'anarcho_cfunctions_pro' ), __( 'Custom Functions', 'anarcho_cfunctions_pro' ), 'manage_options', basename( __FILE__ ), 'anarcho_cfunctions_pro_render_submenu_page' );
 }
 add_action( 'admin_menu', 'anarcho_cfunctions_pro_register_submenu_page' );
 
@@ -85,7 +85,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'inc/settings_page.php' );
  * @since 0.1
  */
 function anarcho_cfunctions_pro_load_scripts($hook) {
-    if ( 'appearance_page_my-custom-functions-pro' != $hook ) {
+    if ( 'settings_page_my-custom-functions-pro' != $hook ) {
         return;
     }
 
@@ -100,7 +100,7 @@ function anarcho_cfunctions_pro_load_scripts($hook) {
     wp_enqueue_style('codemirror_style', plugin_dir_url(__FILE__) . 'inc/codemirror/codemirror.css');
 
     // Styles
-    wp_enqueue_style('styles', plugin_dir_url(__FILE__) . 'inc/styles.css');
+    wp_enqueue_style('styles', plugin_dir_url(__FILE__) . 'inc/style.css');
 }
 add_action('admin_enqueue_scripts', 'anarcho_cfunctions_pro_load_scripts');
 
