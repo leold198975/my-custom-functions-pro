@@ -45,9 +45,9 @@ jQuery(document).ready(function($) {
     // THE FOLLOWING HTML IS PREPARED BY PHP AND INSERTED AS A VARIABLE LIKE
     // $(this).before(\''.$js_code.'\');
 
-    $(this).before('<div class="repeatingSection"><h3><label for="labels[' + countadd_field + ']">Label:</label><input type="text" name="labels[' + countadd_field + ']" id="labels[' + countadd_field + ']" size="50%" value="" /></h3><span class="func" style="//display: none;"><textarea name="anarcho_cfunctions_pro_functions[' + countadd_field + ']" id="anarcho_cfunctions_pro_functions[' + countadd_field + ']" class="func_editor" ><?php echo esc_attr( get_option( "anarcho_cfunctions_pro_functions[' + countadd_field + ']" ) ); ?></textarea></span><button type="button" class="button showHide"><span><?php _e( "Show", "anarcho_cfunctions_pro" ); ?></span><span style="display: none"><?php _e( "Hide", "anarcho_cfunctions_pro" ); ?></span></button><button type="button" class="button-primary deleteSection" style="float:right;"><?php _e( "Delete", "anarcho_cfunctions_pro" ); ?></button></div>');
+    $(this).before('<div class="repeatingSection"><h3><label for="mcfunctions_pro[label-' + countadd_field + ']">Label:</label><input type="text" name="mcfunctions_pro[label-' + countadd_field + ']" id="mcfunctions_pro[label-' + countadd_field + ']" size="50%" value="" /></h3><span class="func" style="//display: none;"><textarea name="mcfunctions_pro[function-' + countadd_field + ']" id="mcfunctions_pro[function-' + countadd_field + ']" class="func_editor" placeholder="Enter Your Custom Function Here"><?php echo esc_attr( get_option( "mcfunctions_pro[function-' + countadd_field + ']" ) ); ?></textarea></span><button type="button" class="button showHide"><span><?php _e( "Show", "mcfunctions_pro" ); ?></span><span style="display: none"><?php _e( "Hide", "mcfunctions_pro" ); ?></span></button><button type="button" class="button-primary deleteSection button-del"><?php _e( "Delete", "mcfunctions_pro" ); ?></button></div>');
 
-    //$(".repeatingSection").append('<button type="button" class="button showHide"><span><?php _e( "Show", "anarcho_cfunctions_pro" ); ?></span><span style="display: none"><?php _e( "Hide", "anarcho_cfunctions_pro" ); ?></span></button><button type="button" class="button-primary deleteSection" style="float:right;"><?php _e( "Delete", "anarcho_cfunctions_pro" ); ?></button>');
+    //$(".repeatingSection").append('<button type="button" class="button showHide"><span><?php _e( "Show", "mcfunctions_pro" ); ?></span><span style="display: none"><?php _e( "Hide", "mcfunctions_pro" ); ?></span></button><button type="button" class="button-primary deleteSection" style="float:right;"><?php _e( "Delete", "mcfunctions_pro" ); ?></button>');
  });
 
  // Delete a repeating section
@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
     var other_fields = current_field.siblings('.repeatingSection');
     if (other_fields.length === 0) {
                            alert("Cannot delete the last function. If you do not require this function then leave it blank.");
-                          return;
+                           return;
     }
     current_field.slideUp('fast', function () {
 
@@ -69,7 +69,6 @@ jQuery(document).ready(function($) {
                           })
 
     })
-                          
  });
 
  // Show/hide entry of field and change text of button

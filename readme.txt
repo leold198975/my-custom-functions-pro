@@ -3,7 +3,7 @@ Contributors: Arthur Gareginyan
 Tags: code, php, function, snippet, custom, execute, edit, editing, editor, functionality plugin, codemirror, syntax highlighting, syntaxhighlighting, syntax highlighter, syntaxhighlighter, syntax,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JG3SB73K86FA8
 Requires at least: 3.9
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: 0.1
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,11 +12,11 @@ EASILY and SAFELY add your own functions, snippets or any custom codes directly 
 
 
 == Description ==
-An easy to use WordPress plugin that lets you EASILY and SAFELY add your own functions, snippets or any custom codes for execution in WordPress environment directly out of your WordPress Dashboard without any need of an external editor. This is a “Pro” version of the plugin “My Custom Functions”. This plugin allows you to add more then one field.
+An easy to use WordPress plugin that lets you EASILY and SAFELY add your own functions, snippets or any custom codes for execution in WordPress environment directly out of your WordPress Dashboard without any need of an external editor. This is a "Pro" version of the plugin "My Custom Functions". This plugin allows you to add more then one field.
 
 It’s purpose is to provide a familiar experience to WordPress users. No need any more editing the functions.php file of your theme. Just add your code in the field on the page and this plugin will do the rest for you.
 
-No any more “Fatal error”. These codes will run safely and will not generate fatal errors, so your website won't break if you make a typo in your code.
+No any more "Fatal error". These codes will run safely and will not generate fatal errors, so your website won't break if you make a typo in your code.
 
 And your website will keep on working, no matter how many times you upgrade or switch your theme.
 
@@ -47,24 +47,24 @@ For more details please visit - [Dedicated Plugin Page](http://mycyberuniverse.c
 * Your votes really make a difference! Thanks.
 
 == Installation ==
-Install "My Custom Functions Pro" just as you would any other WP Plugin.
+Install "My Custom Functions Pro" just as you would any other WordPress Plugin.
 
 Automatically via WordPress:
 
 1. Log into WordPress Dashboard of your website.
-2. Go to "Plugins" —> “add new plugins".
+2. Go to "`Plugins`" —> "`add new plugins`".
 3. Find this plugin and click install.
-4. Activate this plugin through the "Plugins" tab.
+4. Activate this plugin through the "`Plugins`" tab.
 
 Manual via FTP:
 
 1. Download a copy (zip file) of this plugin from WordPress.org.
 2. Unzip the zip file.
-3. Upload the unzipped directory to your website's plugin directory (/wp-content/plugins/).
+3. Upload the unzipped directory to your website's plugin directory (`/wp-content/plugins/`).
 4. Log into WordPress Dashboard of your website.
-5. Activate this plugin through the "Plugins" tab.
+5. Activate this plugin through the "`Plugins`" tab.
 
-After installation, a "Custom Functions” menu item will appear in the “Appearance" section. Click on this in order to view plugin's administration page.
+After installation, a "`Custom Functions`" menu item will appear in the "`Appearance`" section. Click on this in order to view plugin's administration page.
 
 [More help installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins "WordPress Codex: Installing Plugins")
 
@@ -77,7 +77,7 @@ Sorry, this plugin is available for use only on self-hosted (WordPress.org) webs
 I don't limit the number of characters.
 
 = Can I use this plugin on my language? =
-Yes. But If your language is not available then you can make one. This plugin is ready for translation. The .pot file is included and placed in "languages" folder. Many of plugin users would be delighted if you shared your translation with the community. Just send the translation files (*.po, *.mo) to me at the arthurgareginyan@gmail.com and I will include the translation within the next plugin update.
+Yes. But If your language is not available then you can make one. This plugin is ready for translation. The `.pot` file is included and placed in "`languages`" folder. Many of plugin users would be delighted if you shared your translation with the community. Just send the translation files (`*.po, *.mo`) to me at the arthurgareginyan@gmail.com and I will include the translation within the next plugin update.
 
 = Where to report bug if found? =
 Please visit [Dedicated Plugin Page on GitHub](https://github.com/ArthurGareginyan/my-custom-functions-pro) and report.
